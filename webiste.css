@@ -1,0 +1,195 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+
+body {
+  background: #fafafa;
+  color: #333;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background: rgba(0, 0, 0, 0.7);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.menu {
+  display: flex;
+  gap: 20px;
+}
+
+.menu a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: #fff;
+}
+
+
+
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+  background-size: cover;
+  background-position: center;
+  animation: backgroundCycle 30s infinite;
+  color: white;
+  text-align: center;
+  transition: background  1s ease-in-out;
+}
+
+
+@keyframes backgroundCycle {
+  0% {
+    background-image: url('back3.png');
+  }
+  33% {
+    background-image: url('back4.png');
+  }
+  66% {
+    background-image: url('back5.png');
+  }
+  100% {
+    background-image: url('backgroungimage.png');
+  }
+}
+.hero-text h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.hero-text p {
+  font-size: 1.2rem;
+}
+
+
+/* Gallery */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+  gap: 20px;
+  padding: 50px;
+}
+
+.gallery img {
+  width: 100%;
+  border-radius: 8px;
+  transition: transform 0.3s;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+}
+
+/* Testimonials */
+.testimonials {
+  padding: 50px;
+  background: #f0f0f0;
+  text-align: center;
+}
+
+/* Form & Newsletter */
+.form-section, .newsletter {
+  padding: 50px;
+  text-align: center;
+}
+
+.form-section form,
+.newsletter {
+  max-width: 400px;
+  margin: auto;
+}
+
+.form-section input,
+.newsletter input,
+.form-section textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+.form-section button, .newsletter button {
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+/* Map */
+.map {
+  text-align: center;
+  padding: 50px;
+}
+
+.map iframe {
+  width: 100%;
+  max-width: 600px;
+  height: 300px;
+  border: 0;
+}
+
+/* Footer */
+footer {
+  background: #333;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .menu {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    background: #444;
+    display: none;
+    padding: 10px 0;
+  }
+  .menu.open {
+    display: flex;
+  }
+  .hamburger {
+    display: flex;
+  }
+
+  nav {
+    padding: 10px 20px;
+  }
+
+  .hero-text h1 {
+    font-size: 2.5rem;
+  }
+  .hero-text p {
+    font-size: 1rem;
+  }
+}
